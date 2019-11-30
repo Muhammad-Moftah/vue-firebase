@@ -2,7 +2,9 @@
   <div id="app">
     <Navbar />
     <h1>{{title}}</h1>
-    <friends :allfriends=friends />
+    <friends :allfriends=friends @delete="deleteFriend"/>
+    <!-- bind the component tag with the name you typed (delete) -->
+    
     <onlinefriends :allfriends=friends />
   </div>
 </template>
@@ -30,7 +32,11 @@ export default {
     onlinefriends
   },
   methods:{
-
+      deleteFriend(childName){   
+          this.friends = this.friends.filter( friend => {
+          return friend.name !== childName.name
+        })
+      }
   }
 };
 </script>
