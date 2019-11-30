@@ -1,42 +1,31 @@
 <template>
   <div id="app">
     <Navbar />
-    <h1>{{title}}</h1>
-    <friends :allfriends=friends @delete="deleteFriend"/>
-    <!-- bind the component tag with the name you typed (delete) -->
-    
-    <onlinefriends :allfriends=friends />
+    <h1>{{ title }}</h1>
+    <button class="btn btn-danger" @click="changeTitle">Change</button>
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar";
-import friends from "./components/Friends";
-import onlinefriends from "./components/Online-friends";
+import Navbar from "./Navbar";
 export default {
   name: "app",
   data() {
     return {
-      title: "Vue app with firebase",
-      friends: [
-        { name: "Muhmmad", online: true },
-        { name: "Ahmed", online: false },
-        { name: "Sayed", online: false },
-        { name: "Moftah", online: true }
-      ]
+      title: "Vue app with firebase"
     };
   },
   components: {
-    Navbar,
-    friends,
-    onlinefriends
+    Navbar
   },
-  methods:{
-      deleteFriend(childName){   
-          this.friends = this.friends.filter( friend => {
-          return friend.name !== childName.name
-        })
-      }
+  methods: {
+    changeTitle() {
+      this.title = "Done Sir";
+    }
+  },
+
+  updated(){
+    alert(this.title);
   }
 };
 </script>
