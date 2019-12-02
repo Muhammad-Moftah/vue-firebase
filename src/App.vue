@@ -2,17 +2,23 @@
   <div id="app">
     <Navbar />
     <h1>{{ title }}</h1>
+  
 
     <div class="d-inline-block m-2 border" v-for="post in posts" :key="post.index">
       <h3>{{ post.favoriteFruit }}</h3>
       <p>{{ post.company }}</p>
     </div>
+
+    <input type="text">
+    <input type="button" value="Here it is">
+    <input type="checkbox"> test 
   </div>
 </template>
 
 <script>
   import axios from "axios";
   import Navbar from "./Navbar";
+  
   export default {
     name: "app",
     data() {
@@ -72,7 +78,10 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  input:not([type=text]) {
     text-transform: capitalize;
   }
+
+
 </style>
