@@ -3,7 +3,6 @@
     <Navbar />
     <h1>{{ title }}</h1>
   
-
     <div class="d-inline-block m-2 border" v-for="post in posts" :key="post.index">
       <h3>{{ post.favoriteFruit }}</h3>
       <p>{{ post.company }}</p>
