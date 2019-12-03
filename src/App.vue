@@ -9,9 +9,7 @@
       <p>{{ post.company }}</p>
     </div>
 
-    <input type="text">
-    <input type="button" value="Here it is">
-    <input type="checkbox"> test 
+
   </div>
 </template>
 
@@ -35,7 +33,7 @@
       axios
         .get("http://www.json-generator.com/api/json/get/ceRevxmPyq?indent=2")
         .then(jsonTest => {
-          window.console.log(jsonTest.data);
+          console.log(jsonTest.data);
           this.posts = jsonTest.data;
         });
     }
