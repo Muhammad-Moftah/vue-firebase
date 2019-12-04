@@ -1,24 +1,29 @@
+// https://eslint.org/docs/user-guide/configuring
+
 module.exports = {
   root: true,
-  env: {
-    // this section will be used to determine which APIs are available to us
-    // (i.e are we running in a browser environment or a node.js env)
-    node: true,
-    browser: true
-  },
   parserOptions: {
-    parser: "babel-eslint",
-    // specifying a module sourcetype prevent eslint from marking import statements as errors
-    sourceType: "module"
+    parser: 'babel-eslint'
+  },
+  env: {
+    browser: true,
   },
   extends: [
-    // use the recommended rule set for both plain javascript and vue
-    "eslint:recommended",
-    "plugin:vue/recommended"
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    'plugin:vue/essential', 
+    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
+    'standard'
   ],
+  // required to lint *.vue files
+  plugins: [
+    'vue'
+  ],
+  // add your custom rules here
   rules: {
-    // we should always disable console logs and debugging in production
-    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
+    // allow async-await
+    'generator-star-spacing': 'off',
+    // allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }
-};
+}
