@@ -1,5 +1,18 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <h3>About Page</h3>
   </div>
 </template>
+
+<script>
+  export default {
+    name: "about",
+    data() {
+      return {
+        kilo: '',
+        meter: ''
+      }
+    },
+    components: {}
+  };
+</script>

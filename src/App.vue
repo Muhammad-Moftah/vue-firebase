@@ -8,12 +8,13 @@
 <script>
 import Navbar from "./components/Navbar";
 
-export default{
-    components: {
+export default {
+  components: {
     Navbar
   }
 };
 </script>
+
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -34,5 +35,8 @@ export default{
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+ nav{
+  padding: 500px;
 }
 </style>
