@@ -1,5 +1,5 @@
 import firebase from "firebase";
-// import firestore from "firebase/firestore";
+import firestore from "firebase/firestore";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -14,7 +14,13 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+// firebase.analytics();
 firebaseApp.firestore().settings({timestampsInSnapshots:true});
 const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+
+
 export default firebaseApp.firestore();
+
+
+

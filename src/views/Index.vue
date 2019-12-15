@@ -27,7 +27,7 @@
 </template>
 
 <script>
-  // import db from "@/firebase/init";
+  import db from "@/firebase/init";
   export default {
     name: "Index",
     data() {
@@ -73,14 +73,14 @@
         });
       }
     }, //end Methods
-    // created(){
-    //   db.collection('smoothies').get()
-    //   .then(snapshot => {
-    //     snapshot.forEach (doc =>{
-    //       console.log(doc.data())
-    //     })
-    //   })
-    // }  
+    created(){
+      db.collection('smoothies').get()
+      .then(snapshot => {
+        snapshot.forEach (doc =>{
+          console.log(doc.data())
+        })
+      })
+    }  
   };
 </script>
 <style>
