@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3>About Page</h3>
+    
   </div>
 </template>
 
@@ -9,8 +10,6 @@
     name: "about",
     data() {
       return {
-        kilo: '',
-        meter: ''
       }
     },
     components: {}

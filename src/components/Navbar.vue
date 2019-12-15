@@ -1,22 +1,22 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <router-link to="/" class="navbar-brand">Navbar</router-link>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li>
-          <router-link class="nav-link" to="/" exact>Home</router-link>
-        </li>
+  <nav class="nav-extended cyan darken-4 mb-3">
+    <div class="container">
+      <div class="nav-wrapper">
+        <router-link to="/" class="brand-logo">Logo</router-link>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li>
+            <router-link class="nav-link" to="/" exact>Home</router-link>
+          </li>
 
-        <li>
-          <router-link class="nav-link" to="/about">About</router-link>
-        </li> 
-      </ul>
+          <li>
+            <router-link class="nav-link" to="/about">About</router-link>
+          </li>
+        </ul>
+        <router-link class="btn btn-floating btn-large halfway-fab pink waves-effect waves-light" to="/about"> <i class=" material-icons">add</i>
+        </router-link>
+
+      </div>
     </div>
-
   </nav>
 </template>
 
@@ -24,7 +24,7 @@
   export default {
     name: "Navbar",
     data() {
-      return{}
+      return {};
     },
     components: {},
     methods: {}

@@ -1,16 +1,25 @@
 <template>
-  <section class="index my-5">
+  <section class="index">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3" v-for="(smoothi, index) in smoothies" :key="smoothi.id">
-        <article class="card text-left shadow">
-          <div class="card-body">
-            <h5 class="card-title"> <span class="badge badge-primary">{{index + 1}}</span> {{smoothi.title}}</h5>
-            <h6 class="card-subtitle mb-4 text-muted">{{smoothi.slug}}</h6>
-            <span class="badge badge-success p-2 mr-1 mb-1" v-for="(food,index) in smoothi.ingerdients" :key='index'>{{food}}</span>      
-            <button @click="deleteSmoothi(smoothi.index)" href="#" class="btn btn-danger card-link d-block mt-2"><i class="fas fa-trash-alt"></i></button>
-          </div>
-        </article>
+        <div class="col l4 m6 s12 left-align " v-for="(smoothi, index) in smoothies" :key="smoothi.index">
+          <article class="card blue-grey darken-1">
+            <div class="card-content">
+              <span class="new badge py-3 valign-wrapper center-align" :data-badge-caption="index + 1"></span>
+              <h6 class="white-text">{{ smoothi.title }}</h6>
+              <h5 class="valign-wrapper white-text flow-text">
+                {{ smoothi.slug }}
+              </h5>
+              <span class="new badge green accent-4 left" v-for="(food, index) in smoothi.ingerdients" :key="index"
+                :data-badge-caption="food"></span>
+            </div>
+            <div class="card-action mt-3">
+              <button @click="deleteSmoothi(index)" href="#" class=" left btn red lighten-2 waves-effect">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+              <aside class="clearfix"></aside>
+            </div>
+          </article>
         </div>
       </div>
     </div>
@@ -18,41 +27,64 @@
 </template>
 
 <script>
+  // import db from "@/firebase/init";
   export default {
     name: "Index",
     data() {
       return {
         smoothies: [{
             title: "Moftah",
-            slug: "Frontend Developer",
-            ingerdients: ["Milk", "Coffe"],
-            id:1
+            slug: "Developer One",
+            ingerdients: ["Milk", "Coffe"]
           },
           {
             title: "Basel",
-            slug: "Backend Developer",
-            ingerdients: ["Burger", "Banana"],
-            id:2
+            slug: "Developer Two ",
+            ingerdients: ["Burger", "Banana"]
           },
           {
             title: "Dabour",
-            slug: "Scrum Master",
-            ingerdients: ["Pepsi", "Botato"],
-            id:3
+            slug: "Developer Three",
+            ingerdients: ["Pepsi", "Botato"]
+          },
+          {
+            title: "Basel",
+            slug: "Developer Four ",
+            ingerdients: ["Burger", "Banana"]
+          },
+          {
+            title: "Dabour",
+            slug: "Developer Five",
+            ingerdients: ["Pepsi", "Botato"]
+          },
+          {
+            title: "Basel",
+            slug: "Developer Six ",
+            ingerdients: ["Burger", "Banana"]
           }
         ]
-      }
+      };
     },
     components: {},
     methods: {
-      deleteSmoothi(id){
-        // this.smoothies = this.smoothies.filter( smoothi => {
-        //   return smoothi.id != id;
-        // })
-        console.log(id);
-        this.smoothies.splice((id - 1), 1)
+      deleteSmoothi(index) {
+        this.smoothies.filter(single => {
+          return single.title != this.smoothies[index].title;
+        });
       }
-
-    }
+    }, //end Methods
+    // created(){
+    //   db.collection('smoothies').get()
+    //   .then(snapshot => {
+    //     snapshot.forEach (doc =>{
+    //       console.log(doc.data())
+    //     })
+    //   })
+    // }  
   };
 </script>
+<style>
+  .card h5 {
+    height: 70px;
+  }
+</style>
