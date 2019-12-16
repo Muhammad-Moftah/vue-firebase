@@ -55,9 +55,11 @@ export default {
 
 /* ==== Style Scrollbar ==== */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 7px;
 }
-
+::-webkit-scrollbar {
+  width: 13px;
+}
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: transparent;
@@ -82,16 +84,13 @@ body{
   overflow: overlay;
   transition: all 0.5s ease
 }
-#scroll:hover{
- background-color: #546e7a;
- color:white;
-}
-#scroll::-webkit-scrollbar{
+
+/* #scroll::-webkit-scrollbar{
   width: 7px;
 }
 #scroll:hover::-webkit-scrollbar{
   width: 13px;
-}
+} */
 /* ===== Styling Select ===== */
 ::-moz-selection {
   color: white;
@@ -101,6 +100,5 @@ body{
   color: white;
   background-color: #26a69a;
 }
-
 
 </style>
