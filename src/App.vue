@@ -1,6 +1,12 @@
 <template>
   <div id="app">
     <Navbar />
+    <div id="scroll">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos cupiditate quod ad quia delectus odit ipsam. Modi, eligendi necessitatibus. Officiis excepturi alias quasi odit quo harum doloribus quod repudiandae assumenda. <br>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsa deleniti, quod eveniet magni commodi libero autem officiis doloribus nostrum asperiores consequatur sit quaerat exercitationem mollitia facilis? Id, illo eius.
+      <br>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatibus dolor eaque esse dignissimos recusandae suscipit natus! Adipisci vitae veniam consectetur placeat, debitis quo officiis ipsam blanditiis voluptatem cum? Voluptatem.
+    </div>
     <router-view />
   </div>
 </template>
@@ -49,23 +55,43 @@ export default {
 
 /* ==== Style Scrollbar ==== */
 ::-webkit-scrollbar {
-  width: 11px;
+  width: 12px;
 }
+
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: #ececec;
+  background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-  border-radius: 10px;
+  background-color: #0000003d;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #8f8f8f;
 }
+body{
+  overflow-y: overlay;
+}
 
+#scroll{
+  width: 300px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 20px auto;
+  border: 1px solid grey;
+  height: 200px;
+  overflow: overlay;
+  transition: all 0.5s ease
+}
+#scroll:hover{
+ background-color: #546e7a;
+ color:white;
+}
+#scroll::-webkit-scrollbar{
+  width: 7px;
+}
+#scroll:hover::-webkit-scrollbar{
+  width: 13px;
+}
 /* ===== Styling Select ===== */
 ::-moz-selection {
   color: white;
@@ -75,4 +101,6 @@ export default {
   color: white;
   background-color: #26a69a;
 }
+
+
 </style>
