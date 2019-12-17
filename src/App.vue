@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <Navbar />
+    <router-view />
+
     <div id="scroll">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos cupiditate quod ad quia delectus odit ipsam. Modi, eligendi necessitatibus. Officiis excepturi alias quasi odit quo harum doloribus quod repudiandae assumenda. <br>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsa deleniti, quod eveniet magni commodi libero autem officiis doloribus nostrum asperiores consequatur sit quaerat exercitationem mollitia facilis? Id, illo eius.
       <br>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatibus dolor eaque esse dignissimos recusandae suscipit natus! Adipisci vitae veniam consectetur placeat, debitis quo officiis ipsam blanditiis voluptatem cum? Voluptatem.
     </div>
-    <router-view />
   </div>
 </template>
 

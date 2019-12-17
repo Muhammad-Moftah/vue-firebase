@@ -14,7 +14,7 @@
                 :data-badge-caption="food"></span>
             </div>
             <div class="card-action mt-3">
-              <button @click="deleteSmoothi(index)" href="#" class=" left btn red lighten-2 waves-effect">
+              <button @click="deleteSmoothi(smoothi.id)" href="#" class=" left btn red lighten-2 waves-effect">
                 <i class="fas fa-trash-alt"></i>
               </button>
               <aside class="clearfix"></aside>
@@ -32,52 +32,26 @@
     name: "Index",
     data() {
       return {
-        smoothies: [{
-            title: "Moftah",
-            slug: "Developer One",
-            ingerdients: ["Milk", "Coffe"]
-          },
-          {
-            title: "Basel",
-            slug: "Developer Two ",
-            ingerdients: ["Burger", "Banana"]
-          },
-          {
-            title: "Dabour",
-            slug: "Developer Three",
-            ingerdients: ["Pepsi", "Botato"]
-          },
-          {
-            title: "Basel",
-            slug: "Developer Four ",
-            ingerdients: ["Burger", "Banana"]
-          },
-          {
-            title: "Dabour",
-            slug: "Developer Five",
-            ingerdients: ["Pepsi", "Botato"]
-          },
-          {
-            title: "Basel",
-            slug: "Developer Six ",
-            ingerdients: ["Burger", "Banana"]
-          }
-        ]
+        smoothies: []
       };
     },
     components: {},
     methods: {
-      deleteSmoothi(index) {
-        this.smoothies.filter(single => {
-          return single.title != this.smoothies[index].title;
-        });
+      deleteSmoothi(id) {
+        db.collection('allsmoothies').doc(id).delete().then(()=>{
+          this.smoothies = this.smoothies.filter(smoothie => {
+            return smoothie.id != id
+          })
+        })
       }
     }, //end Methods
     created(){
       db.collection('allsmoothies').get()
-      .then(snapshot => {
-        snapshot.forEach (doc =>{
-          console.log(doc.data())
+      .then(allDocuments => {
+          allDocuments.forEach (doc =>{
+          let smoothie = doc.data();
+          smoothie.id = doc.id
+          this.smoothies.push(smoothie)
         })
       })
     }  

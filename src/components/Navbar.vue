@@ -12,7 +12,7 @@
             <router-link class="nav-link" to="/about">About</router-link>
           </li>
         </ul>
-        <router-link class="btn btn-floating btn-large halfway-fab pink waves-effect waves-light" to="/about"> <i class=" material-icons">add</i>
+        <router-link class="btn btn-floating btn-large halfway-fab pink waves-effect waves-light" to="/addsmoothie"> <i class=" material-icons">add</i>
         </router-link>
 
       </div>
