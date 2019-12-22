@@ -35,17 +35,6 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-.scroll {
-  border: 1px solid #2c3e50;
-  border-radius: 5px;
-  display: block;
-  margin: 20px auto;
-  padding: 10px;
-  width: 300px;
-  height: 100px;
-  overflow-y: scroll;
-  background-color: grey;
-}
 
 /* ==== Style Scrollbar ==== */
 body{
@@ -63,7 +52,8 @@ a,
 button,
 input[type=button],
 input[type="submit"],
-th{
+th,
+span{
   text-transform: capitalize;
 }
 

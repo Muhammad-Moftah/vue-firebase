@@ -2,33 +2,26 @@
   <section class="index">
     <div class="container">
       <div class="row">
-        <div class="col l4 m6 s12 left-align " v-for="(smoothi, index) in smoothies" :key="smoothi.index">
+        <div class="col l4 m6 s12 left-align " v-for="(smoothie, index) in smoothies" :key="index">
           <article class="card blue-grey darken-1">
             <div class="card-content">
               <span class="new badge py-3 valign-wrapper center-align" :data-badge-caption="index + 1"></span>
-              <h6 class="white-text">{{ smoothi.title }}</h6>
-              <h5 class="valign-wrapper white-text flow-text">
-                {{ smoothi.slug }}
-              </h5>
-              <span class="new badge green accent-4 left" v-for="(food, index) in smoothi.ingerdients" :key="index"
+              <h6 class="white-text">{{ smoothie.title }}</h6>
+              <h5 class="valign-wrapper white-text flow-text">{{ smoothie.slug }} </h5>
+              
+              <span class="new badge green accent-4 left ml-0 mr-2" v-for="(food, index) in smoothie.ingredients" :key="index"
                 :data-badge-caption="food"></span>
             </div>
             <div class="card-action mt-3">
-              <button @click="deleteSmoothi(smoothi.id)" href="#" class=" left btn red lighten-2 waves-effect">
+              <button @click="deleteSmoothi(smoothie.id)" href="#" class=" left btn red lighten-2 waves-effect">
                 <i class="fas fa-trash-alt"></i>
               </button>
+              <router-link tag="button" :to="{name:'EditSmoothie', params:{smoothie_slug:smoothie.slug}}" class="right btn orange darken-1 waves-effect"><i class="material-icons">edit</i></router-link>
               <aside class="clearfix"></aside>
             </div>
           </article>
         </div>
       </div>
-    </div>
-
-     <div id="scroll">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos cupiditate quod ad quia delectus odit ipsam. Modi, eligendi necessitatibus. Officiis excepturi alias quasi odit quo harum doloribus quod repudiandae assumenda. <br>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsa deleniti, quod eveniet magni commodi libero autem officiis doloribus nostrum asperiores consequatur sit quaerat exercitationem mollitia facilis? Id, illo eius.
-      <br>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae voluptatibus dolor eaque esse dignissimos recusandae suscipit natus! Adipisci vitae veniam consectetur placeat, debitis quo officiis ipsam blanditiis voluptatem cum? Voluptatem.
     </div>
   </section>
 </template>
@@ -49,6 +42,7 @@
           this.smoothies = this.smoothies.filter(smoothie => {
             return smoothie.id != id
           })
+          alert('test')
         })
       }
     }, //end Methods
@@ -67,5 +61,11 @@
 <style>
   .card h5 {
     height: 70px;
+  }
+
+  article{
+    padding: 0 10px;
+    border-radius: 75px/200px !important;
+    overflow: hidden;
   }
 </style>
