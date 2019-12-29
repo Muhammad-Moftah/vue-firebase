@@ -2,14 +2,10 @@
   <nav class="nav-extended cyan green darken-4 mb-5">
     <div class="container">
       <div class="nav-wrapper">
-        <router-link to="/" class="brand-logo">Smooties</router-link>
+        <router-link to="/" class="brand-logo pulse">Smooties</router-link>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li>
             <router-link class="nav-link" to="/" exact>Home</router-link>
-          </li>
-
-          <li>
-            <router-link class="nav-link" to="/about">About</router-link>
           </li>
         </ul>
         <router-link class="add-button btn btn-floating btn-large halfway-fab waves-effect waves-light green darken-1 pulse" to="/addsmoothie">   <i class=" material-icons">add</i>

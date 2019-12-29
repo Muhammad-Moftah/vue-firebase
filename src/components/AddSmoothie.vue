@@ -20,7 +20,7 @@
 
         <div class="row">
           <div class="input-field col offset-s1 s10">
-            <input id="ingredient" type="text" class="validat" @keypress.enter.prevent="addIng" v-model="singleIng" />
+            <input id="ingredient" type="text" class="validat active" @keypress.enter.prevent="addIng" v-model="singleIng" placeholder="Press Enter To Add"/>
             <label for="ingredient">Ingredient</label>
             <span style="position:absolute; right:14px;text-transform: capitalize;" @click="ingredients = []"
               class="btn red darken-1 waves-effect btn-small" v-if="ingredients.length">Clear</span>
@@ -58,7 +58,7 @@
       };
     },
     created(){
-      console.log(this.id)
+   
     },
     methods: {
       addSmoothie() {
@@ -68,7 +68,6 @@
             ingredients: this.ingredients,
             slug: this.slug,
             id:this.id
-            
           }).then(() => this.$router.push('/'))
           
         } else {
@@ -88,7 +87,7 @@
   };
 </script>
 
-<style>
+<style scoped>
   .add-form {
     overflow: hidden;
     border-radius: 75px/200px;

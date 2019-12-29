@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Index from "../views/Index.vue";
-import About from "../views/About";
 import addSmoothie from "@/components/AddSmoothie";
 import editSmoothie from "@/components/EditSmoothie";
 
@@ -12,11 +11,6 @@ const routes = [
     path: "/",
     name: "Index",
     component: Index
-  },
-  {
-    path: "/about",
-    name: "about",
-    component: About
   },
   {
     path: "/addsmoothie",

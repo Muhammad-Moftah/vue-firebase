@@ -59,7 +59,7 @@
     }
   };
 </script>
-<style>
+<style scoped>
   .card h5 {
     height: 70px;
   }

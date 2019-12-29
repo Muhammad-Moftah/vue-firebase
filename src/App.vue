@@ -15,7 +15,12 @@ export default {
 };
 </script>
 
-<style>
+
+
+<style >
+@import './assets/bootstrap-4-utilities.min.css';
+
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -91,5 +96,4 @@ span{
   color: white;
   background-color: #26a69a;
 }
-
 </style>
