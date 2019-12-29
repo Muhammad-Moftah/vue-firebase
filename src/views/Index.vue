@@ -8,15 +8,17 @@
               <span class="new badge py-3 valign-wrapper center-align" :data-badge-caption="index + 1"></span>
               <h6 class="white-text">{{ smoothie.title }}</h6>
               <h5 class="valign-wrapper white-text flow-text">{{ smoothie.slug }} </h5>
-              
-              <span class="new badge green accent-4 left ml-0 mr-2" v-for="(food, index) in smoothie.ingredients" :key="index"
-                :data-badge-caption="food"></span>
+              <span class="new badge green accent-4 left ml-0 mr-2" v-for="(food, index) in smoothie.ingredients"
+                :key="index" :data-badge-caption="food"></span>
             </div>
             <div class="card-action mt-3">
               <button @click="deleteSmoothi(smoothie.id)" href="#" class=" left btn red lighten-2 waves-effect">
                 <i class="fas fa-trash-alt"></i>
               </button>
-              <router-link tag="button" :to="{name:'EditSmoothie', params:{smoothie_slug:smoothie.slug}}" class="right btn orange darken-1 waves-effect"><i class="material-icons">edit</i></router-link>
+              <router-link tag="button" :to="{name:'EditSmoothie', params:{smoothie_slug:smoothie.slug}}"
+                class="right btn orange darken-1 waves-effect">
+                <i class="material-icons">edit</i>
+              </router-link>
               <aside class="clearfix"></aside>
             </div>
           </article>
@@ -38,24 +40,23 @@
     components: {},
     methods: {
       deleteSmoothi(id) {
-        db.collection('allsmoothies').doc(id).delete().then(()=>{
+        db.collection('allsmoothies').doc(id).delete().then(() => {
           this.smoothies = this.smoothies.filter(smoothie => {
             return smoothie.id != id
           })
-          alert('test')
         })
       }
     }, //end Methods
-    created(){
+    created() {
       db.collection('allsmoothies').get()
-      .then(allDocuments => {
-          allDocuments.forEach (doc =>{
-          let smoothie = doc.data();
-          smoothie.id = doc.id
-          this.smoothies.push(smoothie)
+        .then(allDocuments => {
+          allDocuments.forEach(doc => {
+            let smoothie = doc.data();
+            smoothie.id = doc.id
+            this.smoothies.push(smoothie)
+          })
         })
-      })
-    }  
+    }
   };
 </script>
 <style>
@@ -63,7 +64,7 @@
     height: 70px;
   }
 
-  article{
+  article {
     padding: 0 10px;
     border-radius: 75px/200px !important;
     overflow: hidden;

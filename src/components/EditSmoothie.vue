@@ -64,11 +64,22 @@
             let ref = db.collection('allsmoothies').where('slug', '==', this.$route.params.smoothie_slug);
             ref.get().then(allDocuments => {
                 allDocuments.forEach(doc => {
-                    console.log(doc.id)
+                    console.log(doc)
+                    
                 })
             })
-           
+
+        },
+        created() {
+            db.collection('collection-name').get()
+                .then(allDocuments => {
+                    allDocuments.forEach(doc => {
+                        // Get the Document Outside Main ID
+                        console.log(doc.id)
+                    })
+                })
         }
+
 
     };
 </script>
