@@ -68,20 +68,9 @@
                     
                 })
             })
-
-        },
-        created() {
-            db.collection('collection-name').get()
-                .then(allDocuments => {
-                    allDocuments.forEach(doc => {
-                        // Get the Document Outside Main ID
-                        console.log(doc.id)
-                    })
-                })
         }
-
-
-    };
+        
+    }; //end export
 </script>
 
 <style>
