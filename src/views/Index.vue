@@ -2,7 +2,7 @@
   <section class="index">
     <div class="container">
       <div class="row">
-        <div class="col l4 m6 s12 left-align " v-for="(smoothie, index) in smoothies" :key="index">
+        <div class="col xl4 l6 m6 s12 left-align " v-for="(smoothie, index) in smoothies" :key="index">
           <article class="card blue-grey darken-1">
             <div class="card-content">
               <span class="new badge py-3 valign-wrapper center-align" :data-badge-caption="index + 1"></span>
@@ -66,7 +66,7 @@
 
   article {
     padding: 0 10px;
-    border-radius: 75px/200px !important;
+    border-radius: 50px/150px !important;
     overflow: hidden;
   }
 </style>

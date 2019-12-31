@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="row">
-      <form class="add-form z-depth-2 col offset-s2 s8 pt-0 pb-5 px-0" @submit.prevent="addSmoothie">
+      <form class="add-form z-depth-2 col offset-l2 l8 s12 pt-0 pb-5 px-0" @submit.prevent="addSmoothie">
         <h5 class="border mb-2 m-0 card py-3 green darken-1 white-text">add Smoothie</h5>
         <div class="row">
           <div class="input-field col offset-s1 s10">
@@ -21,9 +21,12 @@
         <div class="row">
           <div class="input-field col offset-s1 s10">
             <input id="ingredient" type="text" class="validat active" @keypress.enter.prevent="addIng" v-model="singleIng" placeholder="Press Enter To Add"/>
-            <label for="ingredient">Ingredient</label>
-            <span style="position:absolute; right:14px;text-transform: capitalize;" @click="ingredients = []"
+            <label for="ingredient" class="active">Ingredient</label>
+            <span style="position:absolute; right:90px;text-transform: capitalize;" @click="ingredients = []"
               class="btn red darken-1 waves-effect btn-small" v-if="ingredients.length">Clear</span>
+
+            <span style="position:absolute; right:14px;text-transform: capitalize;" @click="addIng"
+              class="btn light-blue darken-3 waves-effect btn-small">Add</span>
             <aside>
               <p class="m-0 left-align p-2 card green darken-2 white-text" v-if="ingredients.length">
                 {{ ingredients.toString() }}
@@ -90,6 +93,6 @@
 <style scoped>
   .add-form {
     overflow: hidden;
-    border-radius: 75px/200px;
+    border-radius: 50px/100px;
   }
 </style>

@@ -8,7 +8,9 @@
             <router-link class="nav-link" to="/" exact>Home</router-link>
           </li>
         </ul>
-        <router-link class="add-button btn btn-floating btn-large halfway-fab waves-effect waves-light green darken-1 pulse" to="/addsmoothie">   <i class=" material-icons">add</i>
+        <router-link
+          class="add-button btn btn-floating btn-large halfway-fab waves-effect waves-light green darken-1 pulse"
+          to="/addsmoothie"> <i class=" material-icons">add</i>
         </router-link>
 
       </div>
@@ -33,10 +35,11 @@
   }
 
   nav li a.router-link-exact-active {
-    color: #42b983 !important;
+    color: #90dbb9 !important;
+    font-size: 18px;
   }
 
-  .add-button.router-link-exact-active{
+  .add-button.router-link-exact-active {
     background-color: #42b983 !important;
     overflow: hidden
   }
