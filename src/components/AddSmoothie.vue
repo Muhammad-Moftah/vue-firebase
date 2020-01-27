@@ -7,21 +7,21 @@
         <div class="row">
           <div class="input-field col offset-s1 s10">
             <input id="Smoothie" type="text" class="validat" v-model="title" required />
-            <label for="Smoothie">Smoothie Title</label>
+            <label for="Smoothie">Name</label>
           </div>
         </div>
 
         <div class="row">
           <div class="input-field col offset-s1 s10">
             <input id="slug" type="text" class="validat" v-model="slug" required />
-            <label for="slug">Slug</label>
+            <label for="slug">Title</label>
           </div>
         </div>
 
         <div class="row">
           <div class="input-field col offset-s1 s10">
             <input id="ingredient" type="text" class="validat active" @keypress.enter.prevent="addIng" v-model="singleIng" placeholder="Press Enter To Add"/>
-            <label for="ingredient" class="active">Ingredient</label>
+            <label for="ingredient" class="active">Skills</label>
             <span style="position:absolute; right:90px;text-transform: capitalize;" @click="ingredients = []"
               class="btn red darken-1 waves-effect btn-small" v-if="ingredients.length">Clear</span>
 

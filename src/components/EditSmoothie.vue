@@ -9,14 +9,14 @@
                 <div class="row">
                     <div class="input-field col offset-s1 s10">
                         <input id="Smoothie" type="text" class="validat" v-model="smoothie.title" required />
-                        <label for="Smoothie" class="active">Smoothie Title</label>
+                        <label for="Smoothie" class="active">Name</label>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="input-field col offset-s1 s10">
                         <input id="slug" type="text" class="validat" v-model="smoothie.slug" required />
-                        <label for="slug" class="active">Slug</label>
+                        <label for="slug" class="active">Title</label>
                     </div>
                 </div>
 
@@ -24,7 +24,7 @@
                     <div class="input-field col offset-s1 s10">
                         <input id="ingredient" type="text" class="validat active" @keypress.enter.prevent="addIng"
                             v-model="singleIng" placeholder="Press Enter To Add" />
-                        <label for="ingredient" class="active">Ingredient</label>
+                        <label for="ingredient" class="active">Skills</label>
                         <span style="position:absolute; right:90px;text-transform: capitalize;"
                             @click="smoothie.ingredients = []" class="btn red darken-1 waves-effect btn-small"
                             v-if="smoothie.ingredients.length">Clear</span>
